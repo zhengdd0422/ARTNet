@@ -1,0 +1,35 @@
+# readme of ARTNet, wirtten by Dandan Zheng in 04/08/2024
+
+Abstract: ADP-ribosylation is a critical post-translational modification involved in regulating diverse cellular processes, including chromatin structure regulation, RNA transcription, and cell death. Bacterial ADP-ribosyltransferase toxins (bARTTs) serve as potent virulence factors that orchestrate the manipulation of host cell functions to facilitate bacterial pathogenesis. Despite their pivotal role, the bioinformatic identification of novel bARTTs poses a formidable challenge due to limited verified data and the inherent sequence diversity among bARTT members. In this study, we proposed the creation of a deep learning-based ARTNet specifically engineered to predict bARTTs from bacterial genomes. Initially, we introduced an effective data augmentation method to address the issue of data scarcity. Subsequently, we employed a data optimization strategy by utilizing ART-related domain subsequences instead of the primary full sequences, thereby significantly enhancing the performance of ARTNet. Our ARTNet achieved a Matthew’s correlation coefficient (MCC) of 0.9351 and an F1-score (macro) of 0.9666 on repeated independent test datasets, outperforming three other deep learning models and traditional machine learning algorithms in terms of time efficiency and accuracy. Furthermore, we empirically demonstrated the ability of ARTNet to predict novel bARTTs across domain superfamilies without sequence similarity. 
+
+
+###############
+(1) Readme                         
+(2) LICENSE
+(3) Codes:	
+	ARTNet_predict.py
+	ADPRT_models.py
+	data_preprocessing.py
+	ARTNet_predict.py	
+(4) trained_models:
+	# pos_art_346, pos_art_346random and pos_whole are used to predict object sequences. Three modes are provided: comprehensive, medium, and strict, to report positive sequences supported by at least one model, at least two models, and all three models, respectively.
+	pos_art_346.h5
+	pos_art_346_random.h5
+	pos_whole.h5
+
+################
+
+# All datasets can be downloaded from "http://www.mgc.ac.cn/ARTNet/"):
+	pos_art.fasta                 : We extract the ART functional domain of pos_core and the expanded sequences after data augmentation.
+	pos_art_346.fasta:            : We extend each subsequence of pos_art from the middle to 346 amino acids based on the original full-length sequences of pos_core and the expanded sequences.
+	pos_art_400.fasta             : We extend each subsequence of pos_art from the middle to 400 amino acids based on the original full-length sequences of pos_core and the expanded sequences.
+	pos_art_450.fasta             : We extend each subsequence of pos_art from the middle to 450 amino acids based on the original full-length sequences of pos_core and the expanded sequences.
+	pos_art_500.fasta             : We extend each subsequence of pos_art from the middle to 500 amino acids based on the original full-length sequences of pos_core and the expanded sequences.
+	pos_art_346random.fasta       : We extend each subsequence of pos_art from the middle to 346 amino acids based on the original full-length sequences of pos_core and the expanded sequences, and
+	VFDB_whole.fasta              : full-length sequences from VFDB, sequences same with that in positive datasets have been deleted.
+    	degaa_whole.fasta	      : full-length sequences from DEG, sequences same with that in positive datasets have been deleted.
+
+# python3.9 tensorflow2.6 and keras2.6 are recommended to run the trained ARTNet models. 
+# If you use any related datasets or sourcecode in your work, please cite the following publication:
+# Dandan Zheng
+
