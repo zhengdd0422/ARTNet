@@ -15,7 +15,7 @@ Abstract: ADP-ribosylation is a critical post-translational modification involve
 	python ARTNet_predict.py
 
 (4) trained_models:
-	# pos_art_346, pos_art_346random and pos_whole are used to predict object sequences. Three modes are provided: comprehensive, medium, and strict, to report positive sequences supported by at least one model, at least two models, and all three models, respectively.
+	# ARTNet models trained on pos_art_346, pos_art_346random and pos_whole datasets are used to develop a final prediction method. Three modes are provided: comprehensive, medium, and strict, to report positive sequences supported by at least one model, at least two models, and all three models, respectively.
 	pos_art_346.h5
 	pos_art_346_random.h5
 	pos_whole.h5
