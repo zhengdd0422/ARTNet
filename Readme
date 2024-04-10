@@ -20,19 +20,24 @@ Abstract: ADP-ribosylation is a critical post-translational modification involve
 	pos_art_346_random.h5
 	pos_whole.h5
 
-################
+(5) datasets:
+	# raw positive sequences
+        bARTTs.fasta                  : The 44 experimentally verified bARTTs encoded by 27 different bacterial pathogens.
 
-# All datasets can be downloaded from "http://www.mgc.ac.cn/ARTNet/"):
+	# positive datasets for training ARTNet
 	pos_art.fasta                 : We extract the ART functional domain of pos_core and the expanded sequences after data augmentation.
 	pos_art_346.fasta:            : We extend each subsequence of pos_art from the middle to 346 amino acids based on the original full-length sequences of pos_core and the expanded sequences.
 	pos_art_400.fasta             : We extend each subsequence of pos_art from the middle to 400 amino acids based on the original full-length sequences of pos_core and the expanded sequences.
 	pos_art_450.fasta             : We extend each subsequence of pos_art from the middle to 450 amino acids based on the original full-length sequences of pos_core and the expanded sequences.
 	pos_art_500.fasta             : We extend each subsequence of pos_art from the middle to 500 amino acids based on the original full-length sequences of pos_core and the expanded sequences.
 	pos_art_346random.fasta       : We extend each subsequence of pos_art from the middle to 346 amino acids based on the original full-length sequences of pos_core and the expanded sequences, and
+	
+	# negative datasets for training ARTNet:
 	VFDB_whole.fasta              : full-length sequences from VFDB, sequences same with that in positive datasets have been deleted.
     	degaa_whole.fasta	      : full-length sequences from DEG, sequences same with that in positive datasets have been deleted.
+########################################
 
 # python3.9， tensorflow2.6 and keras2.6 are recommended to run the trained ARTNet models. 
+# we also offer web server for user to predict bARTTs online: http://www.mgc.ac.cn/ARTNet/. 
 # If you use any related datasets or sourcecode in your work, please cite the following publication:
 # Dandan Zheng
-
